@@ -15,12 +15,20 @@ public class Settings {
         antiAliasing = false;
     }
 
-    public void toggleSound(){
-        sound = !sound;
+    public void turnSoundOn(){
+        sound = true;
     }
 
-    public void toggleMusic(){
-        music = !music;
+    public void turnSoundOff(){
+        sound = false;
+    }
+
+    public void turnMusicOn(){
+        music = true;
+    }
+
+    public void turnMusicOff(){
+        music = false;
     }
 
     public void toggleShadows(){

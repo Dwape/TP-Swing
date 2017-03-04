@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
  */
 public class SettingsWindow extends JFrame {
 
-    public SettingsWindow(String title, ActionListener back, ActionListener toggleSound, ActionListener toggleMusic, ActionListener toggleShadows, ActionListener toggleAntiAliasing){
+    public SettingsWindow(String title, ActionListener back, ActionListener turnSoundOn, ActionListener turnSoundOff, ActionListener turnMusicOn, ActionListener turnMusicOff, ActionListener toggleShadows, ActionListener toggleAntiAliasing){
         setTitle(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(false);
@@ -18,17 +18,19 @@ public class SettingsWindow extends JFrame {
         add(backButton, BorderLayout.PAGE_END);
 
         JRadioButton soundOn = new JRadioButton("On");
-        soundOn.addActionListener(toggleSound);
+        soundOn.addActionListener(turnSoundOn);
         JRadioButton soundOff = new JRadioButton("Off");
-        soundOff.addActionListener(toggleSound);
+        soundOff.setSelected(true);
+        soundOff.addActionListener(turnSoundOff);
         ButtonGroup soundButtons = new ButtonGroup();
         soundButtons.add(soundOn);
         soundButtons.add(soundOff);
 
         JRadioButton musicOn = new JRadioButton("On");
-        musicOn.addActionListener(toggleMusic);
+        musicOn.addActionListener(turnMusicOn);
         JRadioButton musicOff = new JRadioButton("Off");
-        musicOff.addActionListener(toggleMusic);
+        musicOff.setSelected(true);
+        musicOff.addActionListener(turnMusicOff);
         ButtonGroup musicButtons = new ButtonGroup();
         musicButtons.add(musicOn);
         musicButtons.add(musicOff);
@@ -56,7 +58,10 @@ public class SettingsWindow extends JFrame {
 
         panel.add(gridPanel);
         panel.add(backButton);
+        add(panel);
         pack();
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     public void showSelf(){

@@ -15,7 +15,7 @@ public class Controller {
     public Controller(){
         menuWindow = new MainWindow("Main Menu", startGame, openSettings, exit);
         gameWindow = new GameWindow("Game", back);
-        settingsWindow = new SettingsWindow("Settings", back, toggleSound, toggleMusic, toggleShadows, toggleAntiAliasing);
+        settingsWindow = new SettingsWindow("Settings", back, turnSoundOn, turnSoundOff, turnMusicOn, turnMusicOff, toggleShadows, toggleAntiAliasing);
         settings = new Settings();
         menuWindow.showSelf();
     }
@@ -64,18 +64,34 @@ public class Controller {
         }
     };
 
-    ActionListener toggleSound = new ActionListener() {
+    ActionListener turnSoundOn = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            settings.toggleSound();
+            settings.turnSoundOn();
             printStatus();
         }
     };
 
-    ActionListener toggleMusic = new ActionListener() {
+    ActionListener turnSoundOff = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            settings.toggleMusic();
+            settings.turnSoundOff();
+            printStatus();
+        }
+    };
+
+    ActionListener turnMusicOn = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settings.turnMusicOn();
+            printStatus();
+        }
+    };
+
+    ActionListener turnMusicOff = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            settings.turnMusicOff();
             printStatus();
         }
     };

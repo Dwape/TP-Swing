@@ -12,6 +12,8 @@ public class MainWindow extends JFrame {
         addPanels(startGame, settings, exit);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     public void showSelf(){
@@ -50,7 +52,7 @@ public class MainWindow extends JFrame {
         panel2.add(settingsButton);
         panel2.add(exitButton);
 
-        add(panel2);
+        panel1.add(panel2, BorderLayout.PAGE_END);
     }
 }
 

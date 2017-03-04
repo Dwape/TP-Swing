@@ -19,10 +19,16 @@ public class GameWindow extends JFrame{
         add(backButton, BorderLayout.PAGE_END);
         //Image
         ImageIcon image = new ImageIcon("Images/spaceinvaders.jpg");
+        //resize image
+        Image image1 = image.getImage();
+        Image newImage = image1.getScaledInstance(480, 270,  java.awt.Image.SCALE_SMOOTH);
+        image = new ImageIcon(newImage);
         JLabel thumb = new JLabel();
         thumb.setIcon(image);
         add(thumb, BorderLayout.CENTER);
         pack();
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     public void showSelf(){
