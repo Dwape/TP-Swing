@@ -27,9 +27,9 @@ public class MainWindow extends JFrame {
     public void addPanels(ActionListener startGame, ActionListener settings, ActionListener exit){
         JPanel panel1 = new JPanel(new BorderLayout());
 
-        JLabel subtitle = new JLabel("Trabajo Práctico Swing");
-        JLabel name1 = new JLabel("Eduardo Lalor");
-        JLabel name2 = new JLabel("Gianluca Scolaro");
+        JLabel subtitle = new JLabel("Trabajo Práctico Swing", SwingConstants.CENTER);
+        JLabel name1 = new JLabel("   Eduardo Lalor", SwingConstants.CENTER);
+        JLabel name2 = new JLabel("Gianluca Scolaro   ", SwingConstants.CENTER);
 
         panel1.add(subtitle,BorderLayout.PAGE_START);
         panel1.add(name1, BorderLayout.LINE_START);
