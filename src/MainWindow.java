@@ -5,8 +5,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class MainWindow extends JFrame {
+/**
+ * MainWindow is displayed when the program starts.
+ */
 
+public class MainWindow extends JFrame {
+    /**
+     * Creates a MainWindow with a title and three buttons.
+     * @param title
+     * @param startGame
+     * @param settings
+     * @param exit
+     */
     public MainWindow(String title, ActionListener startGame, ActionListener settings, ActionListener exit){
         setTitle(title);
         addPanels(startGame, settings, exit);
@@ -16,14 +26,26 @@ public class MainWindow extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Shows MainWindow.
+     */
     public void showSelf(){
         setVisible(true);
     }
 
+    /**
+     *  Hides MainWindow.
+     */
     public void hideSelf(){
         setVisible(false);
     }
 
+    /**
+     * Creates all the contents for the Main Window used in its constructor
+     * @param startGame
+     * @param settings
+     * @param exit
+     */
     public void addPanels(ActionListener startGame, ActionListener settings, ActionListener exit){
         JPanel panel1 = new JPanel(new BorderLayout());
 

@@ -5,8 +5,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * Displays an image of a game, can be accessed from the MainWindow.
+ */
+
 public class GameWindow extends JFrame{
 
+    /**
+     * Creates a GameWindow with a title, an image and a "back" button.
+     * @param title
+     * @param back
+     */
     public GameWindow(String title, ActionListener back){
         setTitle(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,10 +40,16 @@ public class GameWindow extends JFrame{
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Shows GameWindow.
+     */
     public void showSelf(){
         setVisible(true);
     }
 
+    /**
+     * Hides GameWindow.
+     */
     public void hideSelf(){
         setVisible(false);
     }

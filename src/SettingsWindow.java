@@ -5,8 +5,23 @@ import java.awt.event.ActionListener;
 /**
  * Created by Dwape on 3/3/17.
  */
+
+/**
+ * This window allows the user to modify the settings of the game with different types of buttons.
+ */
 public class SettingsWindow extends JFrame {
 
+    /**
+     * Creates a SettingsWindow with a title and several buttons.
+     * @param title
+     * @param back
+     * @param turnSoundOn
+     * @param turnSoundOff
+     * @param turnMusicOn
+     * @param turnMusicOff
+     * @param toggleShadows
+     * @param toggleAntiAliasing
+     */
     public SettingsWindow(String title, ActionListener back, ActionListener turnSoundOn, ActionListener turnSoundOff, ActionListener turnMusicOn, ActionListener turnMusicOff, ActionListener toggleShadows, ActionListener toggleAntiAliasing){
         setTitle(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,10 +79,16 @@ public class SettingsWindow extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Shows SettingsWindow.
+     */
     public void showSelf(){
         setVisible(true);
     }
 
+    /**
+     * Hides SettingsWindow.
+     */
     public void hideSelf(){
         setVisible(false);
     }

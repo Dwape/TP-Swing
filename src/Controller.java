@@ -5,6 +5,11 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Controls the actions of all buttons and the opening and closing of windows. Created upon execution of the program, it
+ * is in charge of creating all the windows and settings.
+ */
+
 public class Controller {
 
     private MainWindow menuWindow;
@@ -12,6 +17,9 @@ public class Controller {
     private SettingsWindow settingsWindow;
     private Settings settings;
 
+    /**
+     * Creates a Controller, which then creates the windows providing them ActionListeners.
+     */
     public Controller(){
         menuWindow = new MainWindow("Main Menu", startGame, openSettings, exit);
         gameWindow = new GameWindow("Game", back);
@@ -20,6 +28,9 @@ public class Controller {
         menuWindow.showSelf();
     }
 
+    /**
+     * Prints the current values of the variables stored in settings.
+     */
     public void printStatus(){
         if(settings.getSound()) System.out.println("Sound: On");
         else System.out.println("Sound: Off");
@@ -31,6 +42,9 @@ public class Controller {
         else System.out.println("Anti-aliasing: Off");
     }
 
+    /**
+     * ActionListeners with the behaviour that each button will follow.
+     */
     ActionListener back = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
